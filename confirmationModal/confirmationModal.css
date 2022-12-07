@@ -1,0 +1,11 @@
+
+.modal-content {
+    height: var(--modal-height);
+    overflow: visible;
+}
+
+.modal {
+    width: var(--modal-width);
+    max-width: 100%;
+}
+
