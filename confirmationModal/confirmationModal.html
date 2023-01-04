@@ -15,34 +15,9 @@
                     <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{title_}</h2>
                 </header>
     
-                <div class="slds-modal__content slds-p-around_medium slds-is-relative modal-content">
-                    <div class="slds-align_absolute-center">
-                        <h2 class="slds-p-around_medium slds-text-heading_small">{textLabel_}</h2>
-                    </div>
-                    <template if:true={isCombobox}>
-                        <lightning-combobox
-                            name="progress"
-                            label={comboboxLabel}
-                            value={comboboxValue}
-                            placeholder={comboboxPlaceholder}
-                            options={comboboxOptions}
-                            onchange={handleComboboxChange}
-                        ></lightning-combobox>
-                    </template>
-                    <template if:true={isInput}>
-                        <lightning-input
-                            type="text" 
-                            label={inputLabel}
-                            value={inputValue}
-                            onchange={handleInputChange}
-                        ></lightning-input>
-                    </template>
-    
-                    <template if:true={showSpinner}>
-                        <lightning-spinner variant="brand"></lightning-spinner>
-                    </template>
+                <div class="slds-modal__content modal-content">
+                    <slot></slot>
                 </div>
-    
                 <footer class="slds-modal__footer">
                     <div class="slds-grid slds-grid_reverse slds-wrap">
                         <template for:each={buttons_} for:item="button" >

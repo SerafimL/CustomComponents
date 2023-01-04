@@ -1,0 +1,28 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_xx-large">
+            <lightning-button 
+                variant="brand" 
+                label="Base" 
+                title="Looks like a link" 
+                onclick={handleOpenModal} 
+                class="slds-m-left_x-small"
+            ></lightning-button>
+            <div class="slds-p-around_medium">
+                <p><lightning-formatted-text value={result}></lightning-formatted-text></p>
+            </div>
+        </div>
+    </lightning-card>
+    <c-confirmation-modal
+        buttons={buttonModal}
+        name="ConfirmaNumero"
+        modal-height="150px">
+        <div class="slds-align_absolute-center" style="height: 100%;">
+            <lightning-combobox
+                value={picklistValue}
+                options={picklistOptions}
+                onchange={handlePicklistChange}
+            ></lightning-combobox>
+        </div>
+    </c-confirmation-modal>
+</template>
